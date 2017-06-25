@@ -1,0 +1,153 @@
+---
+spring:
+  profiles: cloud
+
+catalog:
+  services:
+    - id: cloudamqp
+      name: cloudamqp
+      description: Managed HA RabbitMQ servers in the cloud.
+      bindable: true
+      plan-updatable: true
+      tags:
+        - amqp
+        - broker
+        - rabbitmq
+      service-settings:
+        service-type: amqp
+      metadata:
+        displayName: CloudAMQP
+        imageUrl: https://d3bql97l1ytoxn.cloudfront.net/app_resources/5799/thumbs_64/img1822869008662778651.png
+        longDescription: Decouple, distribute and scale your applications with the speed of CloudAMQP
+        providerDisplayName: CloudAMQP
+        documentationUrl: https://github.com/ipolyzos/cloudamqp-broker
+        supportUrl: http://www.cloudamqp.com/support.html
+      plans:
+        - id: lemur_076b82374bf5411bb188018b0e5bb4a7
+          name: Little Lemur
+          description: For Development
+          service-settings:
+            quota:
+              limit: 3
+              warn: 2
+          free: true
+          metadata:
+            costs:
+              - amount:
+                  usd: 0.0
+                unit: MONTHLY
+            bullets:
+              - Max 100 queues
+              - Max 10k queued messages
+              - Max idle queue time 28 days
+              - Max 1M MSGs/month
+              - Max 20 connection
+        - id: tiger_35d035c9a3964599a5de5952b5098f17
+          name: Tough Tiger
+          description: For Hobby Apps
+          service-settings:
+            quota:
+              limit: 5
+              warn: 4
+          metadata:
+            costs:
+              - amount:
+                  usd: 19.0
+                unit: MONTHLY
+            bullets:
+              - Max 1k queues
+              - Max 100k queued messages
+              - Max idle queue time 28 days
+              - Max 10M MSGs/month
+              - Max 100 connection
+        - id: bunny_63e6c39a05754d21a251b9ba7b35d60b
+          name: Big Bunny
+          description: Only available with 1 node
+          service-settings:
+            quota:
+              limit: 5
+              warn: 4
+          metadata:
+            costs:
+              - amount:
+                  usd: 99.0
+                unit: MONTHLY
+            bullets:
+              - 10k msgs/s in burst
+              - Max 1k MSGs/month
+              - Max 1k connection
+        - id: rabbit_40f018b60af64ec588729a1bd76d89c0
+          name: Roaring Rabbit
+          description: 1 node
+          service-settings:
+            quota:
+              limit: 5
+              warn: 4
+          metadata:
+            costs:
+              - amount:
+                  usd: 299.0
+                unit: MONTHLY
+            bullets:
+              - Max 20k MSGs/month
+              - Max 8k connection
+        - id: panda_f69f8eec59934c2c8e2bc55888f94844
+          name: Power Panda
+          description: 1 node
+          service-settings:
+            quota:
+              limit: 5
+              warn: 4
+          metadata:
+            costs:
+              - amount:
+                  usd: 499.0
+                unit: MONTHLY
+            bullets:
+              - Max 40k MSGs/month
+              - Max 20k connection
+        - id: ape_1864ab8597354028b93d57ce3c162ba5
+          name: Awesome Ape
+          description: 1 node
+          service-settings:
+            quota:
+              limit: 5
+              warn: 4
+          metadata:
+            costs:
+              - amount:
+                  usd: 999.0
+                unit: MONTHLY
+            bullets:
+              - Max 100k MSGs/month
+              - Max 40k connection
+        - id: hippo_08e6eaf8dfbf4c458873ea13b87bb56b
+          name: Heavy Hippo
+          description: 1 node
+          service-settings:
+            quota:
+              limit: 5
+              warn: 4
+          metadata:
+            costs:
+              - amount:
+                  usd: 1999.0
+                unit: MONTHLY
+            bullets:
+              - Max 200k MSGs/month
+              - Max 80k connection
+        - id: lion_d89cb375b24a43f4b35e792d945db9c8
+          name: Loud Lion
+          description: 1 node
+          service-settings:
+            quota:
+              limit: 5
+              warn: 4
+          metadata:
+            costs:
+              - amount:
+                  usd: 3499.0
+                unit: MONTHLY
+            bullets:
+              - Max 400k MSGs/month
+              - Max 160k connection

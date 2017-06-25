@@ -1,0 +1,13 @@
+---
+applications:
+- name: cloudamqp-broker
+  memory: 1G
+  instances: 1
+  path: target/cloudamqp-broker-0.0.1-SNAPSHOT.jar
+  random-route: false
+  services:
+    - camqp-mongodb
+  env:
+      CLOUDAMQP_API_URL: "https://customer.cloudamqp.com/api"
+      CLOUDAMQP_API_KEY: "XXX-XXX-XXX-XXX-XXX"
+      CLOUDAMQP_REGION: "amazon-web-services::eu-west-1"
